@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>皮肤中心 - 搜狗高速浏览器</title>
+    <meta charset="UTF-8">
+    <link href="favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <link rel="stylesheet" href="./css/sougoupifu.css">
+    <!--[if lt IE 9]>
+    <style>
+        .header {
+            display: none;
+        }
+        .popup {
+            margin: -150px 0 0 -240px;
+        }
+        .slide-index {
+            margin-left: -60px;
+        }
+    </style>
+    <![endif]-->
+
+    <!--[if lt IE 8]>
+    <style>
+        .popup.dl,
+        .popup.error {
+            width: 425px;
+        }
+    </style>
+    <![endif]-->
+</head>
+<body>
+<div id="header" class="header">
+    <div class="header__content">
+        <div id="logo">皮肤中心</div>
+        <ul id="nav" class="nav">
+            <li class="nav__item cur" data-val="index" data-action="change-channel">
+                <a href="#index">首页</a>
+            </li>
+            <li class="nav__item" data-val="simple" data-action="change-channel">
+                <a href="#list?channel=simple">简约</a>
+            </li>
+            <li class="nav__item" data-val="cartoon" data-action="change-channel">
+                <a href="#list?channel=cartoon">卡通</a>
+            </li>
+            <li class="nav__item" data-val="movie" data-action="change-channel">
+                <a href="#list?channel=movie">影视</a>
+            </li>
+            <li class="nav__item" data-val="other" data-action="change-channel">
+                <a href="#list?channel=other">其他</a>
+            </li>
+            <li class="nav__item manage hide" data-val="manage" data-action="change-channel">
+                <a href="#manage">管理</a>
+            </li>
+        </ul>
+        <div class="guide">
+            <a href="http://ie.sogou.com/user/" target="_blank">上传皮肤</a>
+        </div>
+        <div id="search" class="search">
+            <form class="search__form" action="/">
+                <input type="text" />
+                <span class="search-icon" data-action="search"></span>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- content -->
+<!-- include index/common channels/search result -->
+<div id="content" class="main-content"></div>
+
+<div id="footer" class="footer hide">
+    <div class="footer-cont">
+        <p>
+            <a href="http://fuwu.sogou.com/" target="_blank">企业推广</a> -
+            <a href="http://pinyin.sogou.com/" target="_blank">拼音输入法</a> -
+            <a href="http://hr.sogou.com/" target="_blank">诚聘英才</a> -
+            <a href="http://top.sogou.com/" target="_blank">热搜榜</a>
+        </p>
+        <p>© 2017 SOGOU.COM 京ICP证050879号 <a href="http://www.sogou.com/docs/terms.htm" target="_blank">免责声明</a></p>
+    </div>
+</div>
+
+<div id="mask" class="mask-layer invisible" data-action="close-mask"></div>
+
+<div class="mask-layer not-ie invisible" data-action="close-mask">
+    <div class="popup dl" data-action="keep-mask">
+        <div class="popup__info">
+            <p class="popup__info--cont">温馨提示：</p>
+            <p class="popup__info--cont">您当前使用的浏览器无法安装此皮肤，请使用最新版本的 <a class="link" href="http://ie.sogou.com/dldispatch.php">搜狗浏览器</a></p>
+        </div>
+        <div class="popup__op">
+            <a class="btn install" href="http://ie.sogou.com/dldispatch.php">立即下载</a>
+        </div>
+        <span class="popup__close" onclick="window.open('', '_self', ''); window.close();"></span>
+    </div>
+</div>
+
+<!--[if lt IE 8]>
+
+<div class="mask-layer lt-IE8" data-action="close-mask">
+    <div class="popup dl" data-action="keep-mask">
+        <div class="popup__info">
+            <p class="popup__info--cont">温馨提示：</p>
+            <p class="popup__info--cont">您当前使用的浏览器无法安装此皮肤，请使用最新版本的 <a class="link" href="http://ie.sogou.com/dldispatch.php">搜狗浏览器</a></p>
+        </div>
+        <div class="popup__op">
+            <a class="btn install" href="http://ie.sogou.com/dldispatch.php">立即下载</a>
+        </div>
+        <span class="popup__close" onclick="window.close();"></span>
+    </div>
+</div>
+
+<![endif]-->
+
+<script>
+    var ua = navigator.userAgent.toLowerCase();
+    if (ua.indexOf('safari') > -1) {
+        if (ua.indexOf('chrome') < 0) {
+            var header = document.querySelector('#header');
+            var mask = document.querySelector('.not-ie');
+
+            header.classList.add('hide');
+            mask.classList.remove('invisible');
+        }
+    }
+</script>
+<script src="js/sougoupifu.js"></script>
+</body>
+</html>
