@@ -4,3 +4,6 @@
 body {
 	background: yellowGreen;
 }
+div {
+	border: 1px solid red;
+}
