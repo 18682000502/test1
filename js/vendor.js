@@ -1,5 +1,6 @@
 onload = function(){
 	document.onkeydown = function (e) { 
-		alert(e.keyCode)
+		console.log(e.type)
+		console.log(1)
 	}
 }
